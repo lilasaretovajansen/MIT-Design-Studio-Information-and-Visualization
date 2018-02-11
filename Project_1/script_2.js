@@ -16,7 +16,7 @@ canvas2.height = 2 * heightCanvas2;
 var ctx2 = canvas2.getContext('2d');
 ctx2.fillStyle  = "#f4b342";
 
-ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
+//ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
 
 
 // code to request the reload of the window --> we will use this to create animations
@@ -38,11 +38,28 @@ setInterval(drawCanvas2,1000);
 
 function drawCanvas2(){
 
+
 	// get current date and timing
     var date2 = new Date();
     var hour2 = date2.getHours();
     var minutes2 = date2.getMinutes();
     var seconds2= date2.getSeconds();
+
+    if (hour2>12){
+        ctx2.beginPath();
+        ctx2.strokeStyle =  "#3e3f59";
+        ctx2.strokeWidth = 2;
+        ctx2.fillStyle  =  "#3e3f59";;
+        ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
+    }
+
+    else{
+        ctx2.beginPath();
+        ctx2.strokeStyle =  "f4b342";
+        ctx2.strokeWidth = 2;
+        ctx2.fillStyle  =  "f4b342";
+        ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
+    }
 
     //hour
     hour2 = hour2 % 12;

@@ -37,9 +37,9 @@ setInterval(drawCanvas3,1000);
 
 function drawCanvas3(){
 	ctx3.beginPath();
-	ctx3.strokeStyle =  "#fffac4";
+	ctx3.strokeStyle =  "#82648c";
     ctx3.strokeWidth = 2;
-    ctx3.fillStyle  =  "#fffac4";;
+    ctx3.fillStyle  =  "#82648c";;
     ctx3.fillRect(-canvas3.width, -canvas3.height, 2*canvas3.width, 2*canvas3.height);
 	// get current date and timing
     var date3 = new Date();
@@ -55,20 +55,20 @@ function drawCanvas3(){
     //draw hours main rectangle:
     var houry = .1*canvas3.height;
     var hourheight = .3*canvas3.height;
-    ctx3.beginPath();
+    /*ctx3.beginPath();
     ctx3.strokeWidth = 2;
-    ctx3.strokeStyle = "#f44141";
-    ctx3.fillStyle = "#f44141";
+    ctx3.strokeStyle = "#ef7cf9";
+    ctx3.fillStyle = "#ef7cf9";
     ctx3.rect(topcornerx,houry,rectwidth,hourheight);
-    ctx3.stroke();
+    ctx3.stroke();*/
 
     //fill hours
 
     var hper = hour3/24;
     ctx3.beginPath();
     ctx3.strokeWidth = 2;
-    ctx3.strokeStyle = "#f44141";
-    ctx3.fillStyle = "#f44141";
+    ctx3.strokeStyle = "#ef7cf9";
+    ctx3.fillStyle = "#ef7cf9";
     ctx3.rect(topcornerx,houry,rectwidth*hper,hourheight);
     ctx3.fill();
 
@@ -76,20 +76,20 @@ function drawCanvas3(){
     //draw minutes main rectangle:
     var miny = .5*canvas3.height;
     var minheight = .2*canvas3.height;
-    ctx3.beginPath();
+    /*ctx3.beginPath();
     ctx3.strokeWidth = 2;
-    ctx3.strokeStyle = "#41d6f4";
-    ctx3.fillStyle = "#41d6f4";
+    ctx3.strokeStyle = "#ff9b38";
+    ctx3.fillStyle = "#ff9b38";
     ctx3.rect(topcornerx,miny,rectwidth,minheight);
-    ctx3.stroke();
+    ctx3.stroke();*/
 
     //fill min:
 
     var mper = minutes3/60;
     ctx3.beginPath();
     ctx3.strokeWidth = 2;
-    ctx3.strokeStyle = "#41d6f4";
-    ctx3.fillStyle = "#41d6f4";
+    ctx3.strokeStyle = "#ff9b38";
+    ctx3.fillStyle = "#ff9b38";
     ctx3.rect(topcornerx,miny,rectwidth*mper,minheight);
     ctx3.fill();
 
@@ -99,19 +99,19 @@ function drawCanvas3(){
     //draw seconds main rectangle:
     var secy = .8*canvas3.height;
     var secheight = .1*canvas3.height;
-    ctx3.beginPath();
-    ctx3.strokeWidth = 2;
-    ctx3.strokeStyle = "#43f441";
-    ctx3.fillStyle = "#43f441";
-    ctx3.rect(topcornerx,secy,rectwidth,secheight);
-    ctx3.stroke();
+    //ctx3.beginPath();
+    //ctx3.strokeWidth = 2;
+    //ctx3.strokeStyle = "#ffe27a";
+    //ctx3.fillStyle = "#ffe27a";
+    //ctx3.rect(topcornerx,secy,rectwidth,secheight);
+    //ctx3.stroke();
 
     //fill sec:
     var sper = seconds3/60;
     ctx3.beginPath();
     ctx3.strokeWidth = 2;
-    ctx3.strokeStyle = "#43f441";
-    ctx3.fillStyle = "#43f441";
+    ctx3.strokeStyle = "#ffe27a";
+    ctx3.fillStyle = "#ffe27a";
     ctx3.rect(topcornerx,secy,rectwidth*sper,secheight);
     ctx3.fill();
 
