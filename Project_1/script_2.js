@@ -1,11 +1,20 @@
 //plot2
 var canvas2 = d3.select("#plot2").append("canvas").node();
-
+/*
 canvas2.width = document.getElementById("plot2").clientWidth;
 canvas2.height = document.getElementById("plot2").clientHeight;
+*/
+var widthCanvas2 = d3.select("#plot2").node().clientWidth;
+var heightCanvas2 = d3.select("#plot2").node().clientHeight;
 
+// get dimensions of canvas
+// retina and new screens have very good resolutions. Canvases drawings might look a bit blurry in them.
+// to avoid this problem we can scale the size of the canvas twice, and re-scale by using the real sizes
+// this is not necessary
+canvas2.width = 2 * widthCanvas2;
+canvas2.height = 2 * heightCanvas2;
 var ctx2 = canvas2.getContext('2d');
-ctx2.fillStyle  = "#fffac4";
+ctx2.fillStyle  = "#f4b342";
 
 ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
 
@@ -45,7 +54,7 @@ function drawCanvas2(){
     minutes2 = (minutes2 * Math.PI / 30) + (seconds2 * Math.PI / (30 * 60));
 
 	//draw 12 circles
-	radius = .05*(canvas1.width);
+	radius = .08*(canvas1.width);
 	for (column = 1; column < 5; column++) { 
     	for (row = 1; row<4; row++){
     		var x  = .25*row*canvas2.width ;
