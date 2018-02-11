@@ -11,7 +11,7 @@ var ctx1 = canvas1.getContext("2d");
 
 ctx1.fillStyle  = "#4286f4";
 
-ctx1.fillRect(0, 0, canvas1.width, canvas1.height);
+ctx1.fillRect(0, 0, canvas1.RealWidth, canvas1.RealHeight);
 
 // code to request the reload of the window --> we will use this to create animations
 var requestAnimationFrame = window.requestAnimationFrame ||
@@ -57,12 +57,15 @@ function drawCanvas1() {
     ctx1.strokeStyle = "#d4d4d4";
     ctx1.strokeWidth = 2;
     ctx1.fillStyle  = "#4286f4";
+    ctx1.fillRect(-canvas1.width, -canvas1.height, 2*canvas1.width, 2*canvas1.height);
+
     //ctx1.fillStyle = "white"; // to paint over the previous drawing
 
     // arc() draws arcs
     // it needs 5 inputs arc(x,y,radius,startAngle,endAngle)
     // to create circles the starting angle must be 0 and the end angle must be 2*Math.PI
     // because we have translated our canvas to the center; the center of the clock is 0,0
+    ctx1.beginPath();
     ctx1.arc(0, 0, radius, 0, 2 * Math.PI);
     ctx1.stroke();
     ctx1.fill();
@@ -90,15 +93,15 @@ function drawCanvas1() {
     hour = hour % 12;
     hour = (hour * Math.PI / 6) + (minutes * Math.PI / (6 * 60)) + (seconds * Math.PI / (360 * 60));
     //drawHand(hour, radius * 0.5, 6, "#000000");
-    drawPoint(hour,1,10,"#f45342")
+    drawPoint(hour,1,20,"#f45342")
     //minute
     minutes = (minutes * Math.PI / 30) + (seconds * Math.PI / (30 * 60));
     //drawHand(minutes, radius * 0.8, 4, "#000000");
-    drawPoint(minutes,.75,6,"#62ccef")
+    drawPoint(minutes,.75,10,"#62ccef")
     // second
     seconds = (seconds * Math.PI /30);
     //drawHand(seconds, radius * 0.9, 1.5, "#42f462");
-    drawPoint(seconds, 0.5, 4,"#42f462" );
+    drawPoint(seconds, 0.5, 6,"#42f462" );
 
     //
     function drawPoint(angle, distance, size, color){
@@ -117,6 +120,14 @@ function drawCanvas1() {
 
 
     }
+
+    //center circle
+    ctx1.beginPath();
+    ctx1.fillStyle = "#d4d4d4";
+    ctx1.arc(0, 0, 4, 0, 2 * Math.PI);
+    ctx1.fill();
+    ctx1.closePath();
+
 
 
 

@@ -8,7 +8,7 @@ var ctx3 = canvas3.getContext('2d');
 ctx3.fillStyle  = "#fffac4";
 
 
-ctx3.fillRect(0, 0, canvas2.width, canvas2.height);
+ctx3.fillRect(0, 0, canvas3.width, canvas3.height);
 
 
 function myCircle3(){
