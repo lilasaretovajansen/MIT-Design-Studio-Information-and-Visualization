@@ -91,6 +91,7 @@ function drawCanvas1() {
 
     //hour
     hour = hour % 12;
+    //throw new Error(hour);
     hour = (hour * Math.PI / 6) + (minutes * Math.PI / (6 * 60)) + (seconds * Math.PI / (360 * 60));
     //drawHand(hour, radius * 0.5, 6, "#000000");
     drawPoint(hour,1,20,"#f45342")
@@ -107,8 +108,9 @@ function drawCanvas1() {
     function drawPoint(angle, distance, size, color){
 
 		ctx1.beginPath();
-    	var x  = radius*Math.cos(angle)*distance
-    	var y = radius*Math.sin(angle)*distance
+        //throw new Error(hour);
+    	var x  = radius*Math.cos(angle-Math.PI/2)*distance
+    	var y = radius*Math.sin(angle-Math.PI/2)*distance
     	
     	ctx1.lineWidth = 1;
     	ctx1.strokeStyle = color;
