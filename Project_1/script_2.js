@@ -14,7 +14,8 @@ var heightCanvas2 = d3.select("#plot2").node().clientHeight;
 canvas2.width = 2 * widthCanvas2;
 canvas2.height = 2 * heightCanvas2;
 var ctx2 = canvas2.getContext('2d');
-ctx2.fillStyle  = "#f4b342";
+
+//ctx2.fillStyle  = "#f4b342";
 
 //ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
 
@@ -51,14 +52,20 @@ function drawCanvas2(){
         ctx2.strokeWidth = 2;
         ctx2.fillStyle  =  "#3e3f59";;
         ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
+        ctx2.closePath();
     }
 
-    else{
+    else if (hour2 <=12){
+       
+        
         ctx2.beginPath();
-        ctx2.strokeStyle =  "f4b342";
+        ctx2.strokeStyle =  "#f4b342";
         ctx2.strokeWidth = 2;
-        ctx2.fillStyle  =  "f4b342";
+        ctx2.fillStyle  =  "#f4b342";
         ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
+        ctx2.closePath();
+        
+
     }
 
     //hour
@@ -88,6 +95,8 @@ function drawCanvas2(){
     			ctx2.beginPath();
     			ctx2.arc(x, y, radius, 0, 2*Math.PI);
     			ctx2.fill();
+                ctx2.closePath();
+               
 
 
     		}
@@ -96,12 +105,12 @@ function drawCanvas2(){
     			ctx2.beginPath();
     			ctx2.moveTo(x,y);
     			ctx2.arc(x, y, radius, 0, minutes2);
+                ctx2.fill();
     			ctx2.closePath();
-    			ctx2.fill();
+    			
     		}
     		else{
-    			
-    			continue;
+    			ctx2.closePath();
     		}
 
     		
@@ -114,15 +123,3 @@ function drawCanvas2(){
 
 }
 
-function myCircle(){
-
-	var centerX = canvas2.width/2;
-	var centerY = canvas2.height/2;
-	var radius = 0.35 * (canvas2.width/2)
-	ctx2.strokeStyle =  "#4286f4";
-	ctx2.strokeWidth = 2;
-	ctx2.beginPath();
-	ctx2.arc(centerX,centerY,radius , 0, 2*Math.PI);
-	ctx2.closePath;
-	ctx2.stroke();
-}
