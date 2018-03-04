@@ -1,7 +1,7 @@
 //plots
-var margin1 = {t:5, r: 40, b: 20, l: 30}; //this is an object
+var margin1 = {t:5, r: 40, b: 0, l: 30}; //this is an object
 var width1 = d3.select('#mobile1').node().clientWidth - margin1.r - margin1.l,
-    height1 = (d3.select('#mobile1').node().clientHeight / 2) - margin1.t - margin1.b;
+    height1 = (d3.select('#mobile1').node().clientHeight *.7) - margin1.t - margin1.b;
 
 var plot1 = d3.select('#plot1') // if we select a html id #name, if we select a class .name
     .append('svg')
@@ -18,6 +18,7 @@ var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.
 d3.json("data/boston_weather.json",draw);
 
 function draw(error,data){
+    
     var todayWeather = data.hourly.data;
     var currentTemp = data.currently.apparentTemperature;
     var todayNow = new Date ().getTime()/1000;
@@ -26,8 +27,19 @@ function draw(error,data){
         return d.time >= todayNow && d.time <= tomorrow
     });
     
-    d3.select("#temp").html( Math.round(currentTemp ) + "˚");
+    var increasing = (todayWeather[0].temperature >=todayWeather[1].temperature);
+    
+    if (increasing){
 
+        d3.select("#tempDirection").attr("src","upload.png");
+        
+    }
+    else{
+        d3.select("#tempDirection").attr("src","download.png");
+    }
+    
+    d3.select("#temp").html( Math.round(currentTemp ) + "˚");
+    d3.select("#summary").html(data.currently.summary);
     
     var weekWeather = data.daily.data;
     var extentWeek = d3.extent(weekWeather,function(d){
