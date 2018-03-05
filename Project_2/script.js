@@ -33,13 +33,27 @@ function draw(error,data){
 
         d3.select("#tempDirection").attr("src","upload.png");
         
+        
     }
     else{
         d3.select("#tempDirection").attr("src","download.png");
+        
+    }
+     if (increasing){
+
+        d3.select("#arrow2").attr("src","upload.png");
+        
+        
+    }
+    else{
+        d3.select("#arrow2").attr("src","download.png");
+        
     }
     
     d3.select("#temp").html( Math.round(currentTemp ) + "˚");
-    d3.select("#summary").html(data.currently.summary);
+    
+    d3.select("#headerTemp").html( Math.round(currentTemp ) + "˚");
+    d3.select("#summary").html(todayWeather[0].summary);
     
     var weekWeather = data.daily.data;
     var extentWeek = d3.extent(weekWeather,function(d){
@@ -113,7 +127,28 @@ function draw(error,data){
         .attr("r", 100)
         .attr("cx", scaleX2(new Date(data.currently.time)))
         .attr("cy", scaleY2(currentTemp));*/
-
+//icons:
+    var iconDict = {"clear-day": "016-sun.png"
+        ,"clear-night":"004-moon.png"
+        , "rain": "010-raining.png"
+        , "snow": "002-temperature-1.png"
+        , "sleet":"007-umbrella-1.png"
+        , "wind":"013-wind.png"
+        , "fog":"015-cloud.png"
+        , "cloudy":"015-cloud.png"
+        , "partly-cloudy-day":"011-cloudy-1.png"
+        , "partly-cloudy-night":"011-cloudy-1.png"
+        
+    }
+    var icon = todayWeather[0].icon;
+    var src = "icons/png/" +iconDict[icon];
+    d3.select("#weatherIcon").attr("src",src);
+    
+    var formatTime = d3.timeFormat("%I:%M");
+    var time = formatTime(todayNow);
+    d3.select("#time").html(time);
+    
+    
 
 }
 //Translate time data to a date object

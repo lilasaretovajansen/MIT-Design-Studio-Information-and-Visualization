@@ -59,8 +59,9 @@ h2{
 }
 .footer{
     display:grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: 20% 20% 10% 5% 5% 20% 20%;
     grid-template-rows:20% 20% 20% 20% 20%;
+    text-align:right
 }
 
 #summary{
@@ -69,20 +70,22 @@ h2{
     text-align: center;
     font-size: 14pt;
     font-weight: 100;
-    grid-column-start:2;
-    grid-column-end: 4;
+    grid-column-start:3;
+    grid-column-end: 3;
     grid-row-start:3;
     grid-row-end:4;
+    align-self:right;
    
 }
 #tempDirection{
     width:20px;
     height:20px;
     border: 0px;
-    grid-column-start:4;
+    grid-column-start:5;
     grid-column-end: 5;
     grid-row-start:3;
     grid-row-end:4;
+    align-self:left;
 }
 .row img {
      width: 414px;
@@ -119,4 +122,142 @@ h2{
     stroke:#FCAF58;
     stroke-dasharray: 5,5; 
     stroke-width:5px;
+}
+
+
+#mobile2{
+    display:grid;
+    grid-template-rows:7% 31% 31% auto;
+   
+}
+
+#mobile2 img{
+    border:0px;
+    width:10px;
+    height: 10px
+}
+
+
+#mobile2 p{
+     writing-mode: vertical-lr;
+     text-orientation: upright;
+     text-transform: uppercase;
+     font-weight: 300;
+    
+}
+#header2{ 
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-left:10px;
+    padding-right: 10px;
+    border-bottom: 1px solid;
+    grid-row-start:1;
+    grid-row-end:1;
+    text-align: center;
+    font-size: 11pt;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    display:grid;
+    grid-template-columns: 50% 25% auto;
+}
+
+#location{
+    grid-column-start:1;
+    grid-column-end: 1;
+    
+}
+
+#time{
+    grid-column-start:2;
+    grid-column-end: 2;
+}
+#headerTemp{
+    grid-column-start:3;
+    grid-column-end: 3;
+}
+#wind2{
+    display:grid;
+    grid-row-start:2;
+    grid-row-end:2;
+    border-bottom: 1px solid;
+    padding-top:10px;
+    padding-bottom: 10px;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    
+}
+#windText{
+    grid-column-start:1;
+    grid-column-end: 1;
+    grid-row-start:4;
+    grid-row-end:5;
+    
+}
+#wind2 img{
+    width:150px;
+    height:auto;
+    grid-column-start:2;
+    grid-column-end: 2;
+    grid-row-start:2;
+    grid-row-end:8;
+   
+    
+}
+
+
+#temp2{
+    
+    grid-row-start:3;
+    grid-row-end:3;
+    border-bottom: 1px solid;
+    padding-top:10px;
+    padding-bottom: 10px;
+    display:grid;
+    grid-template-columns: 39% auto;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+#tempText{
+    grid-column-start:1;
+    grid-column-end: 1;
+    grid-row-start:4;
+    grid-row-end:5;
+    
+}
+#temperature2{
+    
+}
+#temp2 img{
+    width:100px;
+    height:auto;
+    grid-column-start:2;
+    grid-column-end: 2;
+    grid-row-start:3;
+    grid-row-end:8;
+}
+#weather2{
+    
+    grid-row-start:4;
+    grid-row-end:4;
+    display:grid;
+    grid-template-columns: 40% auto;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+#weatherText{
+    grid-column-start:1;
+    grid-column-end: 1;
+    grid-row-start:4;
+    grid-row-end:5;
+    
+}
+#weather2 img{
+    width:120px;
+    height:auto;
+    grid-column-start:2;
+    grid-column-end: 2;
+    grid-row-start:3;
+    grid-row-end:8;
+    
+}
+
 }
