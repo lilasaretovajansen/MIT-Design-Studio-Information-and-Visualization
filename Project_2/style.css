@@ -204,7 +204,12 @@ h2{
    
     
 }
-
+#wind2 img:hover{
+    cursor: default;
+    transform: rotateY(130deg);
+   
+    transition: all 0.3s ease-in-out 0s;
+}
 
 #temp2{
     

@@ -148,8 +148,11 @@ function draw(error,data){
     var time = formatTime(todayNow);
     d3.select("#time").html(time);
     
-    
-
+    var windDirection = todayWeather[0].windBearing
+    if (windDirection){
+        console.log("windy");
+        d3.select("#weatherIcon").attr("transform", "rotateY(360deg)");
+    }
 }
 //Translate time data to a date object
 function getDate(time){
