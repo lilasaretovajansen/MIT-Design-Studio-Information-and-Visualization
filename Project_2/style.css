@@ -18,7 +18,7 @@ body {
 
 #mobile1{
     display:grid;
-    grid-template-rows:20% auto 30%;
+    grid-template-rows:10% auto 7% 21%;
 }
 
 .header {
@@ -57,9 +57,22 @@ h2{
 #plot1{
     margin-bottom:20px;
 }
+#weeklyIcons1{
+    
+    display:grid;
+    grid-template-columns: 12% 12% 12% 12% 12% 12% 12% 12%;
+    padding-left:35px;
+    
+}
+#weeklyIcons1 img{
+    width:20px;
+    height:auto;
+    border:0px;
+    padding:0px;
+}
 .footer{
     display:grid;
-    grid-template-columns: 20% 20% 10% 5% 5% 20% 20%;
+    grid-template-columns: 20% 10% 10% 10% 5% 5% 5% 5% 10% 20%;
     grid-template-rows:20% 20% 20% 20% 20%;
     text-align:right
 }
@@ -72,8 +85,8 @@ h2{
     font-weight: 100;
     grid-column-start:3;
     grid-column-end: 3;
-    grid-row-start:3;
-    grid-row-end:4;
+    grid-row-start:2;
+    grid-row-end:2;
     align-self:right;
    
 }
@@ -81,10 +94,10 @@ h2{
     width:20px;
     height:20px;
     border: 0px;
-    grid-column-start:5;
-    grid-column-end: 5;
-    grid-row-start:3;
-    grid-row-end:4;
+    grid-column-start:6;
+    grid-column-end: 6;
+    grid-row-start:2;
+    grid-row-end:2;
     align-self:left;
 }
 .row img {
@@ -127,7 +140,7 @@ h2{
 
 #mobile2{
     display:grid;
-    grid-template-rows:7% 31% 31% auto;
+    grid-template-rows:7% 6% 29% 29% 29%;
    
 }
 
@@ -162,6 +175,7 @@ h2{
     grid-template-columns: 50% 25% auto;
 }
 
+
 #location{
     grid-column-start:1;
     grid-column-end: 1;
@@ -176,10 +190,23 @@ h2{
     grid-column-start:3;
     grid-column-end: 3;
 }
+#weeklyIcons{
+    
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    padding-left:20px;
+    border-bottom: 1px solid;
+    
+}
+#weeklyIcons img{
+    width:30px;
+    height:auto;
+}
+
 #wind2{
     display:grid;
-    grid-row-start:2;
-    grid-row-end:2;
+    grid-row-start:3;
+    grid-row-end:3;
     border-bottom: 1px solid;
     padding-top:10px;
     padding-bottom: 10px;
@@ -207,14 +234,13 @@ h2{
 #wind2 img:hover{
     cursor: default;
     transform: rotateY(130deg);
-   
     transition: all 0.3s ease-in-out 0s;
 }
 
 #temp2{
     
-    grid-row-start:3;
-    grid-row-end:3;
+    grid-row-start:4;
+    grid-row-end:4;
     border-bottom: 1px solid;
     padding-top:10px;
     padding-bottom: 10px;
@@ -242,8 +268,8 @@ h2{
 }
 #weather2{
     
-    grid-row-start:4;
-    grid-row-end:4;
+    grid-row-start:5;
+    grid-row-end:5;
     display:grid;
     grid-template-columns: 40% auto;
     grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;

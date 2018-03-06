@@ -140,6 +140,8 @@ function draw(error,data){
         , "partly-cloudy-night":"011-cloudy-1.png"
         
     }
+    
+   
     var icon = todayWeather[0].icon;
     var src = "icons/png/" +iconDict[icon];
     d3.select("#weatherIcon").attr("src",src);
@@ -153,6 +155,37 @@ function draw(error,data){
         console.log("windy");
         d3.select("#weatherIcon").attr("transform", "rotateY(360deg)");
     }
+    var weeklyIcons = document.getElementById("weeklyIcons");
+    for (i = 0;i < 7; i++){
+        var icon = todayWeather[i].icon;
+        var src = "icons/png/" +iconDict[icon];
+        var img = document.createElement("img");
+        img.src = src;
+        
+        weeklyIcons.appendChild(img);
+    }
+    
+     var iconDict2 = {"clear-day": "021-sun.png"
+        ,"clear-night":"021-sun.png"
+        , "rain": "021-rain-2.png"
+        , "snow": "021-snowflake.png"
+        , "sleet":"021-snowing-1.png"
+        , "wind":"021-tornado.png"
+        , "fog":"021-cloud.png"
+        , "cloudy":"021-cloud.png"
+        , "partly-cloudy-day":"021-cloudy-1.png"
+        , "partly-cloudy-night":"021-night-1.png"
+        
+    }
+    var weeklyIcons1 = document.getElementById("weeklyIcons1");
+    for (i = 0;i < 8; i++){
+        var icon = todayWeather[i].icon;
+        var src = "icons2/png/" +iconDict2[icon];
+        var img = document.createElement("img");
+        img.src = src;
+        weeklyIcons1.appendChild(img);
+    }
+     
 }
 //Translate time data to a date object
 function getDate(time){
