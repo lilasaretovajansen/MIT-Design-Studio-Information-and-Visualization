@@ -1,4 +1,25 @@
 //plots
+var weatherData;
+$.ajax({
+  url: 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083',
+  dataType: 'JSONP',
+  type: 'GET',
+  crossDomain: true,
+  complete: function (data) {
+    if (data.readyState == '4' && data.status == '200') {
+      console.log(data.responseJSON)
+      //weatherData = data.responseJSON;
+      draw(data.responseJSON);
+      //console.log(data.responseJSON);
+      //weatherData=data.responseJSON;
+    } else {
+      console.log("DATA FETCH FAILED")
+      d3.json("data/boston_weather.json",draw);
+    }
+  }
+})
+
+
 var margin1 = {t:5, r: 40, b: 0, l: 30}; //this is an object
 var width1 = d3.select('#mobile1').node().clientWidth - margin1.r - margin1.l,
     height1 = (d3.select('#mobile1').node().clientHeight *.7) - margin1.t - margin1.b;
@@ -15,9 +36,11 @@ var plot1 = d3.select('#plot1') // if we select a html id #name, if we select a 
 var url = 'https://api.darksky.net/forecast/c6b293fcd2092b65cfb7313424b2f7ff/42.361145,-71.057083';
 
 
-d3.json("data/boston_weather.json",draw);
+//d3.json("data/boston_weather.json",draw);
+//d3.json("data/boston_weather.json",draw);
 
-function draw(error,data){
+//function draw(error,data){
+function draw(data){
     
     var todayWeather = data.hourly.data;
     var currentTemp = data.currently.apparentTemperature;
