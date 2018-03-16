@@ -29,6 +29,7 @@ var plot1 = d3.select('#plot1') // if we select a html id #name, if we select a 
     .attr('width', width1 + margin1.l +margin1.r)
     .attr('height', height1 + margin1.t + margin1.b);
 
+<<<<<<< HEAD
 
 
 
@@ -209,6 +210,10 @@ function draw(data){
         weeklyIcons1.appendChild(img);
     }
      
+=======
+function draw(error,data){
+    console.log(data);
+>>>>>>> upstream/master
 }
 //Translate time data to a date object
 function getDate(time){
