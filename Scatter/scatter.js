@@ -11,7 +11,7 @@ var xValue = function(d) { return d["Life Ladder"];}, // data -> value
 var inputHappiness=5;
 var inputComaparison = 7;
 var year = 2015;
-var color ="pink";
+var color ="#ACF0F2";
 var comparisonColumn = "Log GDP per capita";
 // setup y, in this case the values in X axis are the proteins
 // We need to define the range, scale and position
@@ -110,11 +110,11 @@ d3.csv("WHR.csv", function(error, data) {
     
     //add users point
     svg.append("circle")
-    .attr("class","dot")
+    .attr("class","dot input")
     .attr("r",7)
     .attr("cx",xScale(inputHappiness))
     .attr("cy",yScale(inputComaparison))
-    .style("fill", "blue")
+    .style("fill", "#FEFFA5")
     .on("mouseover", function(d) {
           tooltip.transition()
                .duration(200)
@@ -144,28 +144,34 @@ document.getElementById("year-slider").addEventListener("click",function(e){
 document.getElementById("generosity-button").addEventListener("click",function(e){
     console.log(document.getElementById("generosity-button").value);
     comparisonColumn = document.getElementById("generosity-button").value;
-    color = "blue";
+    inputComaparison = 1;
+    color = "#1695A3";
     updateData();
+    
+    
     
 });
 
 document.getElementById("social-support-button").addEventListener("click",function(e){
     console.log(document.getElementById("social-support-button").value);
     comparisonColumn = document.getElementById("social-support-button").value;
-    color = "purple";
+    color = "#225378";
+    inputComaparison = 1;
     updateData();
 });
 
 document.getElementById("life-expectancy-button").addEventListener("click",function(e){
     console.log(document.getElementById("life-expectancy-button").value);
     comparisonColumn = document.getElementById("life-expectancy-button").value;
-    color = "green";
+    color = "#B4DC7F";
+    inputComaparison = 60;
     updateData();
 });
 document.getElementById("gdp-button").addEventListener("click",function(e){
     console.log(document.getElementById("gdp-button").value);
     comparisonColumn = document.getElementById("gdp-button").value;
-    color = "pink";
+    inputComaparison = 4;
+    color = "#ACF0F2";
     updateData();
 });
 function updateData(){
@@ -213,7 +219,7 @@ function updateData(){
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Log GDP per capita");
+      .text(comparisonColumn);
 
     // draw dots
     svg.selectAll(".dot")
@@ -241,11 +247,12 @@ function updateData(){
     
     //add users point
     svg.append("circle")
-        .attr("class","dot")
+        .attr("class","dot input")
         .attr("r",7)
         .attr("cx",xScale(inputHappiness))
         .attr("cy",yScale(inputComaparison))
-        .style("fill", "blue")
+        .attr("cy",yScale(inputComaparison))
+        .style("fill", "#EB7F00")
         .on("mouseover", function(d) {
         tooltip.transition()
             .duration(200)

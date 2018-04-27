@@ -37,7 +37,9 @@ body {
     grid-column-start: 1;
     grid-row-start:3;
 }
-
+.input{
+    z-index: 100000;
+}
 
 
 
